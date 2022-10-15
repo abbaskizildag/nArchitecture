@@ -50,10 +50,11 @@ namespace Core.Persistence.Repositories
                                                                     bool enableTracking = true,
                                                                     CancellationToken cancellationToken = default)
         {
-            IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
-            if (!enableTracking) queryable = queryable.AsNoTracking();
-            if (include != null) queryable = include(queryable);
-            return await queryable.ToPaginateAsync(index, size, 0, cancellationToken);
+            //IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
+            //if (!enableTracking) queryable = queryable.AsNoTracking();
+            //if (include != null) queryable = include(queryable);
+            //return await queryable.ToPaginateAsync(index, size, 0, cancellationToken);
+            return null;
         }
 
         public IQueryable<TEntity> Query()
@@ -107,10 +108,11 @@ namespace Core.Persistence.Repositories
                                                        include = null, int index = 0, int size = 10,
                                                    bool enableTracking = true)
         {
-            IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
-            if (!enableTracking) queryable = queryable.AsNoTracking();
-            if (include != null) queryable = include(queryable);
-            return queryable.ToPaginate(index, size);
+            //IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
+            //if (!enableTracking) queryable = queryable.AsNoTracking();
+            //if (include != null) queryable = include(queryable);
+            //return queryable.ToPaginate(index, size);
+            return null;
         }
 
         public TEntity Add(TEntity entity)
